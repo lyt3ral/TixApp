@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Movie{% endblock %} {% block content
+%}
+<div class="card bg-dark">
+  <div class="row g-0 mt-5">
+    <div class="col-md-3">
+      <img
+        src="/static/assets/img/shazam-fury-of-the-gods-et00312239-1678088844.jpg"
+        class="img-fluid rounded-start"
+        alt="Movie poster"
+      />
+      <!-- src="{{ movie.poster_url }}" -->
+    </div>
+    <div class="col-md-8">
+      <div class="card-body dar">
+        <h2 class="card-title">{{ movie.name }}</h2>
+        <h4 class="card-subtitle mb-3 text-muted">
+          Rating: {{ movie.rating }}
+        </h4>
+        <h4 class="card-subtitle mb-3">
+          Tags: {% for tag in movie.tags %}{{ tag.name }} {% endfor %}
+          </div>
+        </h4>
+        <p class="card-text ps-3">
+          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum
+          dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+          Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+        </p>
+        <a href="./{{movie.id}}/book" class="btn btn-primary m-3">Book</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

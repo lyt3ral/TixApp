@@ -1,0 +1,87 @@
+Tag:
+  columns:
+    id:
+      type: Integer
+      primary_key: true
+    name:
+      type: String(255)
+      nullable: false
+
+Venue:
+  columns:
+    id:
+      type: Integer
+      primary_key: true
+    name:
+      type: String(150)
+    address:
+      type: String(150)
+    city:
+      type: String(150)
+    capacity:
+      type: Integer
+
+Movie:
+  columns:
+    id:
+      type: Integer
+      primary_key: true
+    name:
+      type: String(150)
+    rating:
+      type: Float
+
+Show:
+  columns:
+    id:
+      type: Integer
+      primary_key: true
+    movie_id:
+      type: Integer
+      foreign_key:
+        name: movie.id
+        ondelete: CASCADE
+      nullable: false
+    venue_id:
+      type: Integer
+      foreign_key:
+        name: venue.id
+        ondelete: CASCADE
+      nullable: false
+    time:
+      type: DateTime(timezone=True)
+      server_default: CURRENT_TIMESTAMP
+
+Ticket:
+  columns:
+    id:
+      type: Integer
+      primary_key: true
+    user_id:
+      type: Integer
+      foreign_key:
+        name: user.id
+        ondelete: CASCADE
+    show_id:
+      type: Integer
+      foreign_key:
+        name: show.id
+        ondelete: CASCADE
+    venue_id:
+      type: Integer
+      foreign_key:
+        name: venue.id
+        ondelete: CASCADE
+
+User:
+  columns:
+    id:
+      type: Integer
+      primary_key: true
+    email:
+      type: String(150)
+      unique: true
+    password:
+      type: String(150)
+    username:
+      type: String(150)

@@ -1,0 +1,25 @@
+{% extends 'admin/model/edit.html' %} {% block body %} {{ super() }}
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label class="control-label">Movie Title</label>
+      {{ form.name(class_="form-control") }}
+    </div>
+    <div class="form-group">
+      <label class="control-label">Rating</label>
+      {{ form.rating(class_="form-control") }}
+    </div>
+    <div class="form-group">
+      <label class="control-label">Poster URL</label>
+      {{ form.poster(class_="form-control") }}
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label class="control-label">Description</label>
+      {{ form.description(class_="form-control", rows=5) }}
+    </div>
+  </div>
+</div>
+{% endblock %}

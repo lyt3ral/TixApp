@@ -1,0 +1,51 @@
+<a class="col-md-3 mb-4" href="/movies/{{movie.id}}">
+  <div class="card" style="max-width: 100%; max-height: 100%">
+    <img
+      src="{{movie.poster}}"
+      class="card-img-top img-fluid"
+      alt="Movie poster"
+    />
+    <!-- style="object-fit: cover; width: 100%; height: 100%" -->
+    <div class="card-body" style="height: 40%">
+      <h3 class="card-title text-muted mb-2">{{ movie.name }}</h3>
+      <h5 class="card-subtitle text-dark">Rating: {{ movie.rating }}</h5>
+    </div>
+  </div>
+</a>
+<!-- <div class="col-md-4 mb-4">
+  <div class="card" style="max-width: 100%">
+    <img
+      src="/static/assets/img/shazam-fury-of-the-gods-et00312239-1678088844.jpg"
+      class="card-img-top img-fluid"
+      style="object-fit: cover; width: 100%; height: 100%"
+      alt="Movie poster"
+    />
+    <div class="card-body">
+      <h3 class="card-title text-muted mb-2">{{ movie.name }}</h3>
+      <h5 class="card-subtitle text-dark">Rating: {{ movie.rating }}</h5>
+    </div>
+  </div>
+</div> -->
+<!-- 
+<div>
+  <a href="#"
+    ><img
+      class="rounded img-fluid border"
+      src="/static/assets/img/shazam-fury-of-the-gods-et00312239-1678088844.jpg"
+      loading="auto"
+    />
+    <div class="card">
+      <div class="card-body">
+        <h3 class="text-muted card-title mb-2">
+          <span
+            style="color: rgb(81, 87, 94); background-color: rgb(248, 249, 250)"
+            >{{movie.name}}&nbsp;</span
+          >
+        </h3>
+        <h5 style="color: var(--bs-black); background: var(--bs-card-cap-bg)">
+          Rating: {{movie.rating}}
+        </h5>
+      </div>
+    </div>
+  </a>
+</div> -->

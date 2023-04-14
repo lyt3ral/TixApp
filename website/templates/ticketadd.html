@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %}Ticket{% endblock %} {% block content%}
+<section>
+    <form action="" method="POST">
+        <fieldset>
+            <div class="control-group">
+                <div class="control-label">
+                    <label for="venue">Venue
+                        &nbsp;
+                    </label>
+                </div>
+                <div class="controls">
+                    <div>
+                        <select id="venue" name="venue">
+                            <option value="1">PVR</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label for="show">Show
+                        &nbsp;
+                    </label>
+                </div>
+                <div class="controls">
+                    <div>
+                        <select id="show" name="show">
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="control-label">
+                    <label for="user">User
+                        &nbsp;
+                    </label>
+                </div>
+                <div class="controls">
+                    <div>
+                        <select id="user" name="user">
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="control-group">
+                <div class="controls">
+                    <input type="submit" class="btn btn-primary" value="Save">
+                    <input name="_add_another" type="submit" class="btn btn-primary" value="Save and Add Another">
+                    <input name="_continue_editing" type="submit" class="btn btn-primary" value="Save and Continue Editing">
+                    <a href="/admin/ticket/" class="btn btn-danger">Cancel</a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</section>
+
+{% endblock %}

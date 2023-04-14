@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block title %}Movies{% endblock %} {% block content
+%}
+<h1 class="ps-2 pb-2">Movies 🍿</h1>
+<div class="container">
+  <div class="row">
+    {%for movie in movies%} {% include 'cards.html' %} {% endfor %}
+  </div>
+</div>
+{% endblock %}

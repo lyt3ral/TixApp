@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %}Bookings{% endblock %} {% block
+content %}
+<div class="container">
+  <h1>All Bookings</h1>
+  <table class="table bg-dark text-white">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Movie</th>
+        <th>Venue Name</th>
+        <th>Show Date</th>
+        <th>Show Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for ticket in tickets %}
+      <tr>
+        <td>{{ ticket.user.username }}</td>
+        <td>{{ shows[ticket.show_id].movie.name }}</td>
+        {% set ven_id = ticket.venue_id | int - 1 %}
+        <td>{{ venues[ven_id].name }}</td>
+        <td>{{ shows[ticket.show_id].time.strftime('%d-%m-%Y') }}</td>
+        <td>{{ shows[ticket.show_id].time.strftime('%H:%M') }}</td>
+      </tr>
+      <div>{{ show }}</div>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<section
+  class="py-4 py-xl-5"
+  style="color: var(--bs-white); background: #212529"
+>
+  <div class="container" style="padding-top: 50px; padding-bottom: 10px">
+    <div class="row mb-5">
+      <div class="col-md-8 col-xl-6 text-center mx-auto">
+        <h2>Log in</h2>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6 col-xl-4">
+        <div
+          class="card bg-dark bg-gradient border-dark border rounded shadow mb-5"
+          style="background: var(--bs-body-color)"
+        >
+          <div
+            class="card-body border rounded border-1 border-dark shadow d-flex flex-column align-items-center"
+            style="
+              background: var(--bs-gray-dark);
+              padding-top: 5px;
+              --bs-body-bg: var(--bs-blue);
+              border-color: rgba(255, 255, 255, 0);
+            "
+          >
+            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+                class="bi bi-person"
+              >
+                <path
+                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                ></path>
+              </svg>
+            </div>
+            <form class="text-center" method="post">
+              <div class="mb-3">
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-primary d-block w-100" type="submit">
+                  Login
+                </button>
+              </div>
+              <!-- <p class="text-muted">
+                &nbsp;<a href="forgotpwd.html"
+                  ><span style="color: rgb(108, 117, 125)"
+                    >Forgot your password?</span
+                  ></a
+                >
+              </p> -->
+              <p class="text-muted">
+                New to Ticket App?&nbsp;<a href="signup.html"
+                  ><span style="color: rgb(108, 117, 125)">Register</span></a
+                >
+              </p>
+              <p class="text-muted">
+                <a href="/admin"
+                  ><span style="color: rgb(108, 117, 125)"
+                    >Login as Administrator</span
+                  ></a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+<!-- 
+<form method="POST">
+  <h3 align="center">Login</h3>
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+ -->

@@ -1,0 +1,86 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>{{ movie.name }}</h1>
+  <h5>Rating: {{ movie.rating }}</h5>
+
+  {% if movie.description %}
+  <p>{{ movie.description }}</p>
+  {% endif %}
+
+  <hr />
+
+  <h2>Available Shows:</h2>
+
+  {% if shows %}
+  <div class="row">
+    {% for show in shows %}
+    <div class="col-md-4 mb-4">
+      <div class="card bg-dark">
+        <div class="card-body">
+          <h5 class="card-title">{{ show.venue.name }}</h5>
+          <p class="card-text">{{ show.venue.address }}</p>
+          <p class="card-text">Date: {{ show.time.strftime('%d-%m-%Y') }}</p>
+          <p class="card-text">Time: {{ show.time.strftime('%H:%M') }}</p>
+          <a
+            href="/book/{{show.id}}"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal{{ show.id }}"
+            >Book</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- Modal for booking tickets -->
+    <div
+      class="modal fade"
+      id="bookingModal{{ show.id }}"
+      tabindex="-1"
+      aria-labelledby="bookingModalLabel{{ show.id }}"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-dark"
+      >
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5 class="modal-title" id="bookingModalLabel{{ show.id }}">
+              Book Tickets for {{ show.movie.name }}
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body bg-dark">
+            <form method="post">
+              <div class="mb-3">
+                <label for="ticket-count" class="form-label"
+                  >Number of Tickets</label
+                >
+                <div class="input-group">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="ticket-count"
+                    name="ticket-count"
+                    value="1"
+                  />
+                </div>
+              </div>
+              <input type="hidden" name="show-id" value="{{show.id}}" />
+              <input type="submit" class="btn btn-primary" id="book-btn" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>No shows available at the moment.</p>
+  {% endif %}
+</div>
+{% endblock %}

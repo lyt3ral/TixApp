@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<!-- <h3>Welcome, {{ user.username }}!</h3> -->
+<div class="container">
+  <h2 class="ps-3">Now Showing</h2>
+  <div class="slider responsive">
+    {% for movie in movies %} {% include 'cards.html' %} {% endfor %}
+  </div>
+</div>
+
+<!-- <div class="card">
+  <div class="card-body">
+    <h3 class="text-muted card-title mb-2">
+      <span style="color: rgb(81, 87, 94); background-color: rgb(248, 249, 250)"
+        >Shazam: Fury of the G  ods&nbsp;</span
+      >
+    </h3>
+    <h5 style="color: var(--bs-black); background: var(--bs-card-cap-bg)">
+      English (U/A)
+    </h5>
+  </div>
+</div> -->
+<!-- <div class="card">
+  <img
+    src="/static/assets/img/shazam-fury-of-the-gods-et00312239-1678088844.jpg"
+    class="card-img-top img-fluid"
+    alt="Movie poster"
+  />
+  <div class="card-body">
+    <h3 class="card-title text-muted mb-2">The Godfather</h3>
+    <h5 class="card-subtitle text-dark">Rating: 9.2</h5>
+  </div>
+</div> -->
+<!-- <ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul> -->
+
+{% endblock %}
