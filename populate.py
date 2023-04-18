@@ -30,11 +30,11 @@ with app.app_context():
     ]
 
     movies = [
-        Movie(name="Avengers", rating=4.5),
-        Movie(name="Avengers: Endgame", rating=4.5),
-        Movie(name="Avengers: Infinity War", rating=4.5),
-        Movie(name="Avengers: Age of Ultron", rating=4.5),
-        Movie(name="Captain America: The First Avenger", rating=4.5),
+        Movie(name="Avengers", rating=4.5, poster="/static/assets/img/avengers.jpg"),
+        Movie(name="Avengers: Endgame", rating=4.5, poster="/static/assets/img/avengers_endgame.jpg"),
+        Movie(name="Avengers: Infinity War", rating=4.5, poster="/static/assets/img/avengers_infinity_war.jpg"),
+        Movie(name="Avengers: Age of Ultron", rating=4.5, poster="/static/assets/img/avengers_age_of_ultron.jpg"),
+        Movie(name="Captain America: The First Avenger", rating=4.5, poster="/static/assets/img/captain_america_the_first_avenger.jpg"),
     ]
 
     shows = [
