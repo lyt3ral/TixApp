@@ -57,8 +57,12 @@
           ><span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navcol-5">
-          {% if user.is_authenticated %}
           <ul class="navbar-nav ms-auto">
+            {% if user.is_authenticated %} {% if user.role == 'admin' %}
+            <li class="nav-item">
+              <a href="/admin" class="nav-link">Admin</a>
+            </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>

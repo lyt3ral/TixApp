@@ -70,49 +70,8 @@ def create_app():
         desc = StringField('Description')
         tags = QuerySelectMultipleField('Tags', query_factory=lambda: Tag.query.all(), get_label='name')
 
-    
-    # class AddMovieView(BaseView):
-    #     @expose("/", methods=["GET", "POST"])
-    #     def index(self):
-    #         if request.method == "POST":
-    #             movie_title = request.form["movie_title"]
-    #             selected_movie = request.form.get("selected_movie")
-    #             if selected_movie:
-    #                 # Fetch movie details from OMDb API
-    #                 api_key = "your_api_key_here"
-    #                 url = f"http://www.omdbapi.com/?i={selected_movie}&apikey={api_key}"
-    #                 response = requests.get(url)
-    #                 if response.status_code == 200:
-    #                     data = response.json()
-    #                     # Fill movie form with details
-    #                     movie = Movie(
-    #                         name=data["Title"],
-    #                         rating=float(data["imdbRating"]),
-    #                         description=data["Plot"],
-    #                         poster=data["Poster"]
-    #                     )
-    #                     db.session.add(movie)
-    #                     db.session.commit()
-    #                     return redirect(url_for("admin.index"))
-    #             else:
-    #                 # Display list of movies that match the entered name
-    #                 api_key = "your_api_key_here"
-    #                 url = f"http://www.omdbapi.com/?s={movie_title}&apikey={api_key}"
-    #                 response = requests.get(url)
-    #                 if response.status_code == 200:
-    #                     data = response.json()
-    #                     movie_results = data.get("Search", [])
-    #                     return self.render("admin/add_movie.html", movie_results=movie_results)
-    #         return self.render("admin/add_movie.html")
-
     class MovieView(BaseView):
         form = MovieForm
-        # create_template = "admin/moviemodify.html"
-        # edit_template = "admin/moviemodify.html"
-        # column_searchable_list = ["name"]
-        # column_filters = ["name", "rating"]
-        # column_editable_list = ["name", "rating", "description", "poster"]
-        # can_create = False
         
     class ShowForm(BaseForm):
         movie = QuerySelectField('Movie', query_factory=lambda: Movie.query.all(), get_label='name')
@@ -147,7 +106,6 @@ def create_app():
     admin.add_view(MovieView(Movie, db.session))
     admin.add_view(ShowView(Show, db.session))
     admin.add_view(BaseView(Tag, db.session))
-    # admin.add_view(AddMovieView(name="Add Movie", endpoint="add_movie"))
 
     return app
 

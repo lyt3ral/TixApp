@@ -34,7 +34,7 @@ with app.app_context():
         Movie(name="Avengers: Endgame", rating=4.5),
         Movie(name="Avengers: Infinity War", rating=4.5),
         Movie(name="Avengers: Age of Ultron", rating=4.5),
-        Movie(name="Avengers: The First Avenger", rating=4.5),
+        Movie(name="Captain America: The First Avenger", rating=4.5),
     ]
 
     shows = [
