@@ -91,6 +91,11 @@ def testapi():
 
     return render_template('testapi.html', user=current_user)
 
+@views.route('/admin/',methods=['GET'])
+def admin():
+    return render_template('admin_home.html', user=current_user)
+    
+
 # @views.route('/addmovie/', methods=['GET','POST'])
 # def addmovie():
 #     if request.method == 'POST':

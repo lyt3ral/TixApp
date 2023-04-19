@@ -8,11 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <title>
-      {% block title %}{% if admin_view.category %}{{ admin_view.category }} -
-      {% endif %}{{ admin_view.name }} - {{ admin_view.admin.name }}{% endblock
-      %}
-    </title>
+    <title>{% block title %} {% endblock %}</title>
     <link
       rel="stylesheet"
       href="/static/assets/bootstrap/css/bootstrap.min.css"
