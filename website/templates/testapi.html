@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Get movie content{% endblock %} {%
+block content %}
+
+<!-- Form to post movie title -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form action="/testapi" method="POST">
+        <div class="form-group">
+          <label for="movieTitle">Movie Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="movieTitle"
+            name="movieTitle"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {% if moviesuccess == 'True' %}
+      <div>
+        <h3>Movie Title: {{ title }}</h3>
+        <h3>Movie Rating: {{ rating }}</h3>
+        <img src="{{ poster }}" alt="Movie Poster" />
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
