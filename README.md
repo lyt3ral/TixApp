@@ -1,7 +1,7 @@
 ## Built Using
-👉 Flask
-👉 Bootstrap
-👉 SQLite
+👉 Flask  
+👉 Bootstrap  
+👉 SQLite  
 
 ## Setup & Installation
 
