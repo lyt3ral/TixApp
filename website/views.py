@@ -68,7 +68,7 @@ def book_movie(movie_id):
     # print(movie,shows[0])
     return render_template("book-movie.html", user=current_user, shows=shows, movie=movie)
 
-@views.route('/bookings', methods=['GET,POST'])
+@views.route('/bookings', methods=['GET','POST'])
 @login_required
 def bookings():
     tickets = Ticket.query.filter_by(user_id=current_user.id)
@@ -91,9 +91,9 @@ def testapi():
 
     return render_template('testapi.html', user=current_user)
 
-@views.route('/admin/',methods=['GET'])
-def admin():
-    return render_template('admin_home.html', user=current_user)
+# @views.route('/admin/',methods=['GET'])
+# def admin():
+#     return render_template('admin_home.html', user=current_user)
     
 
 # @views.route('/addmovie/', methods=['GET','POST'])

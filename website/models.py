@@ -47,10 +47,16 @@ class Show(db.Model):
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
     venue_id = db.Column(db.Integer, db.ForeignKey('venue.id'), nullable=False)
     time = db.Column(db.DateTime(timezone=True), default=func.now())
+    # tickets = db.Column(db.Integer, nullable=False)
+
+    def __init__(self, movie_id, venue_id):
+        self.movie_id = movie_id
+        self.venue_id = venue_id
+        # self.tickets = Venue.query.get(self.venue_id).capacity
 
 class Ticket(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    # venue = db.relationship('Venue', backref=db.backref('tickets_venue', lazy='dynamic'))
+    # venue = db.relationship('Venue', backref=db.backref('tickets_venue', lazy='dynamic'))  
     # show = db.relationship('Show', backref=db.backref('tickets_show', lazy='dynamic'))
     # user = db.relationship('User', backref=db.backref('tickets_user'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

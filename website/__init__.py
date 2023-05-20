@@ -45,6 +45,7 @@ def create_app():
         return User.query.get(int(id))
 
     admin = Admin(app, base_template='baseadmin.html', template_mode='bootstrap4')
+    # admin = Admin(app)
 
     class BaseForm(FlaskForm):
         class Meta:
