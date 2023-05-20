@@ -1,3 +1,8 @@
+## Built Using
+👉 Flask
+👉 Bootstrap
+👉 SQLite
+
 ## Setup & Installation
 
 Make sure you have the latest version of Python installed.
